@@ -50,20 +50,19 @@ function render() {
   // TODO 6
   // for each movie on the user's watchlist, insert a list item into the <ul> in the watchlist section
 	model.watchlistItems.forEach( function(movie){
-		var li = $("<li></li>").text(movie.title);
-		$('#section-watchlist').children('ul').append(li);
+		var li = $("<li></li>").html('<p>' + movie.title + '</p>');
+		$('#section-watchlist ul').append(li);
 	});
   // for each movie on the current browse list,
   model.browseItems.forEach(function(movie) {
 		// TODO 3
 		// insert a list item into the <ul> in the browse section
-		var listItem = $("<li></li>").text(movie.title);
-    var li = $('#section-browse').children('ul').append(listItem);
+		var listItem = $("<li></li>").html('<p>' + movie.title + '</p>');
 
 		// TODO 4
 		// the list item should include a button that says "Add to Watchlist"
 		var button = $("<button></button>").text("Add to Watchlist");
-		$(li).append(button);
+		$('#section-browse ul').append(listItem, button);
 
 		// TODO 5
 		// when the button is clicked, this movie should be added to the model's watchlist and render() should be called again
