@@ -50,7 +50,11 @@ function render() {
   // TODO 6
   // for each movie on the user's watchlist, insert a list item into the <ul> in the watchlist section
 	model.watchlistItems.forEach( function(movie){
+<<<<<<< HEAD
 		var li = $("<li></li>").html('<p>' + movie.title + '</p>');
+=======
+		var li = $("<li></li>").text(movie.title);
+>>>>>>> e3ff5f2bef9dd11708aead9f7d3fc08c950a8659
 		$('#section-watchlist ul').append(li);
 	});
   // for each movie on the current browse list,
